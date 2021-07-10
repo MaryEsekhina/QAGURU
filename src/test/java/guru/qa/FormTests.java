@@ -31,16 +31,13 @@ public class FormTests {
         $("#lastName").setValue("Esekhina"); //ввели фамилию
         $("#userEmail").setValue("es@mail.ru"); //ввели почту
         $("#genterWrapper").$(byText("Female")).click(); //выбрали пол
-
         $("#userNumber").setValue("9101234567");//номер телефона
         //выбираем дату рождения
         $(".react-datepicker-wrapper").click();
         $(".react-datepicker__year-select").selectOption("1990");
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__day--019").click();
-        //выбираем предмет
-        $("#subjectsInput").setValue("English").pressEnter();
-
+        $("#subjectsInput").setValue("English").pressEnter(); //выбираем предмет
         $("#hobbiesWrapper").$(byText("Reading")).click(); //увлечения
         $("#uploadPicture").uploadFile(new File("src/test/java/../resources/wat.jpeg")); //фото
         $("#currentAddress").setValue("г. Рязань"); //адрес
