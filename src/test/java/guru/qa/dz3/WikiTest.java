@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -23,16 +24,13 @@ public class WikiTest {
         // ввести в поиск selenide
         $("[name=q]").setValue("selenide").pressEnter();
         //открыть страницу selenide/selenide
-        var firstLinkFound = $$("ul.repo-list li").first().$("a");
-        firstLinkFound.click();
+        $("ul.repo-list li a").click();
         // кликнуть по кнопке Wiki
-        var wikiLink = $("main#js-repo-pjax-container nav li.d-flex a[href=\"/selenide/selenide/wiki\"]");
-        wikiLink.click();
+        $("main li.d-flex a[href=\"/selenide/selenide/wiki\"]").click();
         //развернуть весь список страниц Pages
         $("button.btn-link.f6").click();
         //кликнуть по SoftAssertion
-        var softAssertionLink =$("li.wiki-more-pages a.d-block");
-        softAssertionLink.click();
+        $(byText("SoftAssertions")).click();
         //Проверить, что есть пример кода для JUnit5 (наличие слов Using JUnit5)
         $("div.markdown-body").shouldHave(text("Using JUnit5"));
     }
