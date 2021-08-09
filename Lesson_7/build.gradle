@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2",
+            "com.codeborne:pdf-test:1.6.1",
+            "com.codeborne:xls-test:1.4.3",
+            "com.opencsv:opencsv:5.3",
+            "org.assertj:assertj-core:3.19.0",
+            "org.apache.poi:poi-ooxml:3.11",
+            "com.codeborne:selenide:5.23.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+}
+
+test {
+    useJUnitPlatform()
+}
