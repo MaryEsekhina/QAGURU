@@ -27,7 +27,11 @@ dependencies {
             "com.codeborne:selenide:5.23.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
-
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 test {
     useJUnitPlatform()
 }
