@@ -24,5 +24,6 @@ public class SelenideTest {
         $(linkText("eroshenkoam/allure-example")).click();
         $(partialLinkText("Issues")).click();
         $("#issue_68_link").shouldHave(text("Listeners NamedBy"));
+        //Mary, merci!
     }
 }
