@@ -17,12 +17,11 @@ public class SelenideTest {
     public void testRepositoryIssue() {
         open("https://github.com");
 
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue("eroshenkoam/allure-example").submit();
 
         $(linkText("eroshenkoam/allure-example")).click();
         $(partialLinkText("Issues")).click();
         $("#issue_68_link").shouldHave(text("Listeners NamedBy"));
+
     }
 }
